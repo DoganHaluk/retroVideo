@@ -1,0 +1,15 @@
+<div lang="nl" xmlns:th="http://www.thymeleaf.org">
+    <head th:fragment="head(title)">
+        <meta charset="UTF-8">
+        <title th:text="${title}"></title>
+        <link rel="icon" th:href="@{/images/retrovideo.ico}" type="image/x-icon">
+        <link rel="stylesheet" th:href="@{/css/retrovideo.css}">
+    </head>
+
+    <nav th:fragment="menu">
+        <h2>RETRO VIDEO</h2>
+        <ul>
+            <li><a th:href="@{/}">Genres</a></li>
+        </ul>
+    </nav>
+</div>
