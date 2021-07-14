@@ -14,7 +14,7 @@
         <th:block th:text="${genreUniek.get().getNaam()}"></th:block>
     </h2>
     <th:block th:each="film:${films}" th:object="${film}">
-        <img th:src="@{/images/{id}.jpg(id=*{id})}" th:alt="*{titel}">
+        <a th:href="@{/film/{id}(id=*{id})}"><img th:src="@{/images/{id}.jpg(id=*{id})}"></a>
     </th:block>
 </div>
 </body>

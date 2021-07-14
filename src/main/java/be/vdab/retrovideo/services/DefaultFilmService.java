@@ -26,6 +26,6 @@ public class DefaultFilmService implements FilmService {
     @Override
     @Transactional(readOnly = true)
     public Optional<Film> findById(long id) {
-        return Optional.empty();
+        return filmRepository.findById(id);
     }
 }

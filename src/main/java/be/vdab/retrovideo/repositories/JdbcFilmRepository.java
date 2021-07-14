@@ -1,6 +1,7 @@
 package be.vdab.retrovideo.repositories;
 
 import be.vdab.retrovideo.domain.Film;
+import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -9,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class JdbcFilmRepository implements FilmRepository {
+class JdbcFilmRepository implements FilmRepository {
     private final JdbcTemplate template;
 
     JdbcFilmRepository(JdbcTemplate template) {
@@ -20,12 +21,17 @@ public class JdbcFilmRepository implements FilmRepository {
 
     @Override
     public List<Film> findByGenre(long genreId) {
-        var sql = "SELECT id, genreid, titel, voorraad, gereserveerd, prijs FROM films WHERE genreid=?";
+        var sql = "SELECT id, genreid, titel, voorraad, gereserveerd, prijs FROM films WHERE genreid=? ORDER BY titel";
         return template.query(sql, filmMapper, genreId);
     }
 
     @Override
     public Optional<Film> findById(long id) {
-        return Optional.empty();
+        try {
+            var sql = "SELECT id, genreid, titel, voorraad, gereserveerd, prijs FROM films WHERE id=?";
+            return Optional.of(template.queryForObject(sql, filmMapper, id));
+        } catch (IncorrectResultSizeDataAccessException ex) {
+            return Optional.empty();
+        }
     }
 }

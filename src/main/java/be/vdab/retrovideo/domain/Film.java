@@ -49,4 +49,12 @@ public class Film {
     public BigDecimal getPrijs() {
         return prijs;
     }
+
+    public long getBeschikbaar() {
+        return voorraad - gereserveerd;
+    }
+
+    public boolean isBeschikbaar() {
+        return getBeschikbaar() > 0;
+    }
 }
