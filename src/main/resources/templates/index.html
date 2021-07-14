@@ -5,8 +5,17 @@
 <nav th:replace="fragments::menu"></nav>
 <h1>Genres</h1>
 <ul class="genres">
-    <li th:each="genre:${genres}" th:object="${genre}"><a th:text="*{naam}" th:href="@{/genre/{id}(id=*{id})}"></a>
+    <li th:each="genre:${genres}" th:object="${genre}">
+        <a th:text="*{naam}" th:href="@{/genre/{id}(id=*{id})}"></a>
     </li>
 </ul>
+<div th:if="${id}">
+    <h2>
+        <th:block th:text="${genreUniek.get().getNaam()}"></th:block>
+    </h2>
+    <th:block th:each="film:${films}" th:object="${film}">
+        <img th:src="@{/images/{id}.jpg(id=*{id})}" th:alt="*{titel}">
+    </th:block>
+</div>
 </body>
 </html>

@@ -28,7 +28,7 @@ class JdbcGenreRepository implements GenreRepository {
     @Override
     public Optional<Genre> findById(long id) {
         try {
-            var sql = "SELECT naam FROM genres WHERE id=?";
+            var sql = "SELECT id, naam FROM genres WHERE id=?";
             return Optional.of(template.queryForObject(sql, genreMapper, id));
         } catch (IncorrectResultSizeDataAccessException ex) {
             return Optional.empty();
