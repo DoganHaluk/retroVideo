@@ -21,13 +21,14 @@ class MandjeController {
     }
 
     @PostMapping("{id}")
-    public String voegToe(@PathVariable long id){
+    public String voegToe(@PathVariable long id) {
         mandje.voegToe(id);
         return "redirect:/mandje";
     }
 
     @GetMapping
-    public ModelAndView toonMandje(){
-        return new ModelAndView("mandje", "films", filmService.findByIds(mandje.getIds()));
+    public ModelAndView toonMandje() {
+        return new ModelAndView("mandje", "films", filmService.findByIds(mandje.getIds()))
+                .addObject("totaalprijs", filmService.totaalPrijs(mandje.getIds()));
     }
 }
