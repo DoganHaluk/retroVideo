@@ -3,7 +3,6 @@
 <head th:replace="fragments::head(title='Mandje')"></head>
 <body>
 <nav th:replace="fragments::menu2"></nav>
-
 <h1>Mandje</h1>
 <form method="post" th:action="@{/mandje/verwijderen}">
     <table>
@@ -23,7 +22,7 @@
                 <th:block th:text="*{{prijs}}"></th:block>
             </td>
             <td class="checkbox">
-                <input type="checkbox">
+                <input type="checkbox" name="ids" th:value="*{id}">
             </td>
         </tr>
         </tbody>
@@ -31,7 +30,7 @@
         <tr>
             <td>Totaal</td>
             <td>€
-                <th:block th:text="${totaalprijs}"></th:block>
+                <th:block th:text="${#numbers.formatDecimal(totaalprijs,1,2)}"></th:block>
             </td>
         </tr>
         </tfoot>

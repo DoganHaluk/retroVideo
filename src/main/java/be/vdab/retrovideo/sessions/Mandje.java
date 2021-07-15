@@ -20,4 +20,13 @@ public class Mandje implements Serializable {
     public Set<Long> getIds() {
         return ids;
     }
+
+    public void verwijder(Long[] filmIds) {
+        for (var id : filmIds) {
+            ids.remove(id);
+        }
+    }
+    public boolean isNietLeeg() {
+        return !ids.isEmpty();
+    }
 }
