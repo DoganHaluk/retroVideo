@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 @Transactional
@@ -27,5 +28,11 @@ public class DefaultFilmService implements FilmService {
     @Transactional(readOnly = true)
     public Optional<Film> findById(long id) {
         return filmRepository.findById(id);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Film> findByIds(Set<Long> ids) {
+        return filmRepository.findByIds(ids);
     }
 }

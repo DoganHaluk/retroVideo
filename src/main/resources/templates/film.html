@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="nl" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments::head(title='Retro Video')"></head>
+<head th:replace="fragments::head(title='Film')"></head>
 <body>
-<nav th:replace="fragments::menu"></nav>
+<nav th:replace="fragments::menu1"></nav>
 <h1 th:if="not ${film}">Film niet gevonden:
     <th:block th:text="${id}"></th:block>
 </h1>
@@ -12,7 +12,7 @@
         <img th:src="@{/images/{id}.jpg(id=*{id})}" th:alt="*{titel}">
         <dt>Prijs:</dt>
         <dd>€
-            <th:block th:text="*{prijs}"></th:block>
+            <th:block th:text="*{{prijs}}"></th:block>
         </dd>
         <dt>Voorraad:</dt>
         <dd th:text="*{voorraad}"></dd>
