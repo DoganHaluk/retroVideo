@@ -22,19 +22,20 @@ public class Mandje implements Serializable {
     }
 
     public void verwijder(Long[] filmIds) {
-        for (var id : filmIds) {
-            ids.remove(id);
+        if (filmIds.length > 0) {
+            for (var id : filmIds) {
+                ids.remove(id);
+            }
+        }else {
+            throw new NullPointerException();
         }
     }
-    public boolean isNietLeeg() {
-        return !ids.isEmpty();
-    }
 
-    public int aantalFilms(){
+    public int aantalFilms() {
         return ids.size();
     }
 
-    public void reset(){
+    public void reset() {
         ids.clear();
     }
 }

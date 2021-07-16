@@ -1,8 +1,6 @@
 package be.vdab.retrovideo.controllers;
 
-import be.vdab.retrovideo.domain.Film;
 import be.vdab.retrovideo.domain.Reservatie;
-import be.vdab.retrovideo.exceptions.ReservatieException;
 import be.vdab.retrovideo.services.FilmService;
 import be.vdab.retrovideo.services.ReservatieService;
 import be.vdab.retrovideo.sessions.KlantGekozen;
@@ -12,9 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.sql.SQLException;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.LinkedList;
 
 @Controller

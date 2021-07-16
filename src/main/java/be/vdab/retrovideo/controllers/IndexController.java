@@ -26,7 +26,8 @@ class IndexController {
 
     @GetMapping("genre/{id}")
     public ModelAndView films(@PathVariable long id) {
-        return new ModelAndView("index", "films", filmService.findByGenre(id))
+        var modelAndView = new ModelAndView("index", "genres", genreService.findAll());
+        return modelAndView.addObject("films", filmService.findByGenre(id))
                 .addObject("genreUniek", genreService.findById(id));
     }
 }
