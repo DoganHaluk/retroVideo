@@ -42,4 +42,9 @@ public class DefaultFilmService implements FilmService {
     public BigDecimal totaalPrijs(Set<Long> ids){
         return filmRepository.totaalPrijs(ids);
     }
+
+    @Override
+    public void update(long id){
+        filmRepository.update(id);
+    }
 }

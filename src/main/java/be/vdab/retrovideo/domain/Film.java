@@ -42,10 +42,6 @@ public class Film {
         return gereserveerd;
     }
 
-    public void setGereserveerd(long gereserveerd) {
-        this.gereserveerd = gereserveerd;
-    }
-
     public BigDecimal getPrijs() {
         return prijs;
     }

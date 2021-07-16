@@ -58,4 +58,9 @@ class JdbcFilmRepository implements FilmRepository {
                 "?)";
         return template.queryForObject(sql, BigDecimal.class, ids.toArray());
     }
+
+    @Override
+    public void update(long id) {
+        template.update("UPDATE films SET gereserveerd=gereserveerd+1 WHERE id="+id);
+    }
 }

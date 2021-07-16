@@ -15,4 +15,6 @@ public interface FilmRepository {
     List<Film> findByIds(Set<Long> ids);
 
     BigDecimal totaalPrijs(Set<Long> ids);
+
+    void update(long id);
 }

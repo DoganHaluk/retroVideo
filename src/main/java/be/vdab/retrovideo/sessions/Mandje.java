@@ -33,4 +33,8 @@ public class Mandje implements Serializable {
     public int aantalFilms(){
         return ids.size();
     }
+
+    public void reset(){
+        ids.clear();
+    }
 }
