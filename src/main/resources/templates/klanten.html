@@ -10,7 +10,7 @@
     </label>
     <button>Zoeken</button>
 </form>
-<table th:if="${klantengevonden}">
+<table th:if="${klantenGevonden}">
     <thead>
     <tr>
         <th>Naam</th>
@@ -20,14 +20,13 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="klant:${klantengevonden}" th:object="${klant}">
-        <td><a th:text="*{getNaam()}" th:href="@{/bevestigen/{id}(id=*{getId()})}"></a></td>
+    <tr th:each="klant:${klantenGevonden}" th:object="${klant}">
+        <td><a th:text="*{getNaam()}" th:href="@{/klanten/bevestigen/{id}(id=*{getId()})}"></a></td>
         <td th:text="*{straatNummer}"></td>
         <td th:text="*{postcode}"></td>
         <td th:text="*{gemeente}"></td>
     </tr>
     </tbody>
 </table>
-
 </body>
 </html>

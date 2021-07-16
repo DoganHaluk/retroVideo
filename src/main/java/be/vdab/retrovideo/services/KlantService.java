@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface KlantService {
     List<Klant> findByFamilienaamBevat(String familienaamBevat);
+
+    String getNaam(long id);
 }

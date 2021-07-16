@@ -29,4 +29,8 @@ public class Mandje implements Serializable {
     public boolean isNietLeeg() {
         return !ids.isEmpty();
     }
+
+    public int aantalFilms(){
+        return ids.size();
+    }
 }

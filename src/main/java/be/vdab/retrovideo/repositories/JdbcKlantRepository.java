@@ -22,4 +22,10 @@ public class JdbcKlantRepository implements KlantRepository {
         var sql = "SELECT id, familienaam, voornaam, straatNummer, postcode, gemeente FROM klanten WHERE familienaam LIKE ? ORDER BY familienaam";
         return template.query(sql, klantMapper, '%' + familienaamBevat + '%');
     }
+
+    @Override
+    public String getNaam(long id){
+        var sql = "SELECT CONCAT(voornaam, ' ', familienaam) AS name FROM klanten WHERE id=?";
+        return template.queryForObject(sql, String.class, id);
+    }
 }

@@ -21,4 +21,9 @@ public class DefaultKlantService implements KlantService{
     public List<Klant> findByFamilienaamBevat(String familienaamBevat) {
         return klantRepository.findByFamilienaamBevat(familienaamBevat);
     }
+
+    @Override
+    public String getNaam(long id) {
+        return klantRepository.getNaam(id);
+    }
 }

@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head(title='Bevestigen')"></head>
+<body>
+<nav th:replace="fragments::menu2"></nav>
+<h1>Bevestigen</h1>
+<p><th:block th:text="${aantalMandje}"></th:block> film(s) voor <th:block th:text="${klantGekozen}"></th:block></p>
+<button>Bevestigen</button>
+</body>
+</html>

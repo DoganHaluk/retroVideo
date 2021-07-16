@@ -1,6 +1,7 @@
 package be.vdab.retrovideo.controllers;
 
 import be.vdab.retrovideo.services.FilmService;
+import be.vdab.retrovideo.sessions.KlantGekozen;
 import be.vdab.retrovideo.sessions.Mandje;
 import org.springframework.stereotype.Controller;
 
@@ -33,7 +34,7 @@ class MandjeController {
                 .addObject("totaalprijs", filmService.totaalPrijs(mandje.getIds()));
     }
 
-    @PostMapping("/verwijderen")
+    @PostMapping("verwijderen")
     public String verwijderen(Long[] ids) {
         mandje.verwijder(ids);
         return "redirect:/mandje";
