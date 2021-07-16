@@ -1,1 +1,0 @@
-insert into reservaties(klantid, filmid) values(1, 1);
