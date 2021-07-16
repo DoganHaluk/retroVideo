@@ -24,7 +24,7 @@ public class JdbcKlantRepository implements KlantRepository {
     }
 
     @Override
-    public String getNaam(long id){
+    public String getNaam(long id) {
         var sql = "SELECT CONCAT(voornaam, ' ', familienaam) AS name FROM klanten WHERE id=?";
         return template.queryForObject(sql, String.class, id);
     }

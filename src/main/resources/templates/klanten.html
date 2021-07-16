@@ -21,7 +21,7 @@
     </thead>
     <tbody>
     <tr th:each="klant:${klantenGevonden}" th:object="${klant}">
-        <td><a th:text="*{getNaam()}" th:href="@{/klanten/bevestigen/{id}(id=*{getId()})}"></a></td>
+        <td><a th:text="*{getNaam()}" th:href="@{/bevestigen/{id}(id=*{getId()})}"></a></td>
         <td th:text="*{straatNummer}"></td>
         <td th:text="*{postcode}"></td>
         <td th:text="*{gemeente}"></td>
