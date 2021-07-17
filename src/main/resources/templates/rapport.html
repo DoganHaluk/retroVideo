@@ -6,5 +6,6 @@
 <h1>Rapport</h1>
 <p th:if="not ${mislukt}">De reservatie is OK.</p>
 <p th:if="${mislukt}">De reservatie van deze films is mislukt.</p>
+<footer th:replace="fragments::footer"></footer>
 </body>
 </html>

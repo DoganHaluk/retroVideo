@@ -6,9 +6,9 @@
 <h1 th:if="not ${film}">Film niet gevonden:
     <th:block th:text="${id}"></th:block>
 </h1>
-<th:block th:if="${film}" th:object="${film}">
+<div class="center" th:if="${film}" th:object="${film}">
     <h1 th:text="*{titel}"></h1>
-    <dl>
+    <dl class="card">
         <img th:src="@{/images/{id}.jpg(id=*{id})}" th:alt="*{titel}">
         <dt>Prijs:</dt>
         <dd>€
@@ -24,6 +24,7 @@
     <form th:if="*{isBeschikbaar()}" method="post" th:action="@{/mandje/{id}(id=*{id})}">
         <button>In mandje</button>
     </form>
-</th:block>
+</div>
+<footer th:replace="fragments::footer"></footer>
 </body>
 </html>

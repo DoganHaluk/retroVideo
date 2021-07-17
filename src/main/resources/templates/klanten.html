@@ -10,7 +10,7 @@
     </label>
     <button>Zoeken</button>
 </form>
-<table th:if="${klantenGevonden}">
+<table class="card" th:if="${klantenGevonden}">
     <thead>
     <tr>
         <th>Naam</th>
@@ -28,5 +28,6 @@
     </tr>
     </tbody>
 </table>
+<footer th:replace="fragments::footer"></footer>
 </body>
 </html>

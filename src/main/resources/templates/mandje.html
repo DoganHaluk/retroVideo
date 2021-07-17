@@ -5,7 +5,7 @@
 <nav th:replace="fragments::menu2"></nav>
 <h1>Mandje</h1>
 <form method="post" th:action="@{/mandje/verwijderen}">
-    <table>
+    <table class="card">
         <thead>
         <tr>
             <th>Film</th>
@@ -36,5 +36,6 @@
         </tfoot>
     </table>
 </form>
+<footer th:replace="fragments::footer"></footer>
 </body>
 </html>

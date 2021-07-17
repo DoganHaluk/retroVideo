@@ -8,8 +8,8 @@ body {
 }
 
 nav {
-    background-color: deepskyblue;
     display: flex;
+    background-color: deepskyblue;
     justify-content: space-between;
     padding: 0.5em;
 }
@@ -35,7 +35,7 @@ nav li a:hover {
     color: gold;
 }
 
-h1 {
+h1, h2 {
     text-align: center;
 }
 
@@ -122,6 +122,41 @@ label span, .fout {
     padding: 0.5em;
 }
 
-p{
+p {
     margin: 10px;
+}
+
+.card {
+    width: fit-content;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 10px 0, 0 4px 20px 0;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+}
+
+.center {
+    display: grid;
+    justify-items: center;
+    padding-bottom: 50px;
+}
+
+footer{
+    display: flex;
+    background-color: #0088b6;
+    justify-content: space-between;
+    padding: 0.5em;
+    font-size: x-small;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+table.card{
+    margin-bottom: 70px;
 }
