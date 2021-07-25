@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("rapport")
@@ -29,17 +31,26 @@ public class ReservatieController {
 
     @PostMapping
     public ModelAndView rapport() {
+        var modelAndView = new ModelAndView("rapport");
+        List<Long> mislukteReservatieIds = mandje.getIds().stream()
+                .filter(id -> !filmService.findById(id).get().isBeschikbaar())
+                .collect(Collectors.toList());
+        var mislukteReservaties = new LinkedList<String>();
+        for (var filmId : mislukteReservatieIds) {
+            mislukteReservaties.add(filmService.findById(filmId).get().getTitel());
+        }
+        modelAndView.addObject("mislukt", mislukteReservaties);
+
+        List<Long> lukteReservatieIds = mandje.getIds().stream()
+                .filter(id -> filmService.findById(id).get().isBeschikbaar())
+                .collect(Collectors.toList());
         var lukteReservaties = new LinkedList<Reservatie>();
-        for (var filmId : mandje.getIds()) {
+        for (var filmId : lukteReservatieIds) {
             lukteReservaties.add(new Reservatie(klantGekozen.getKlantId(), filmId));
             filmService.update(filmId);
         }
-        var modelAndView = new ModelAndView("rapport");
-        if (lukteReservaties.size() > 0) {
-            reservatieService.create(lukteReservaties);
-        } else {
-            modelAndView.addObject("mislukt");
-        }
+        reservatieService.create(lukteReservaties);
+
         mandje.reset();
         return modelAndView;
     }

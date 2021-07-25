@@ -4,8 +4,11 @@
 <body>
 <nav th:replace="fragments::menu1"></nav>
 <h1>Rapport</h1>
-<p th:if="not ${mislukt}">De reservatie is OK.</p>
-<p th:if="${mislukt}">De reservatie van deze films is mislukt.</p>
+<p th:if="${mislukt.isEmpty()}">De reservatie is OK.</p>
+<p th:if="not ${mislukt.isEmpty()}">De reservatie van deze films is mislukt:</p>
+<ul>
+    <li th:each="film:${mislukt}" th:text="${film}"></li>
+</ul>
 <footer th:replace="fragments::footer"></footer>
 </body>
 </html>

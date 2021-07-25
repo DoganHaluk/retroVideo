@@ -24,6 +24,10 @@ nav ul {
     margin-top: 2.5em;
 }
 
+nav li {
+    display: inline;
+}
+
 nav li a {
     color: white;
     font-weight: bold;
@@ -43,14 +47,10 @@ h1, h2 {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-}
-
-ul {
     padding: 0;
-
 }
 
-li {
+.genres li {
     display: inline;
 }
 
@@ -145,7 +145,7 @@ p {
     padding-bottom: 50px;
 }
 
-footer{
+footer {
     display: flex;
     background-color: #0088b6;
     justify-content: space-between;
@@ -157,6 +157,6 @@ footer{
     width: 100%;
 }
 
-table.card{
+table.card {
     margin-bottom: 70px;
 }
