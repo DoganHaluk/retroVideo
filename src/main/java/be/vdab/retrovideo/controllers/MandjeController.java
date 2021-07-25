@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Optional;
+
 @Controller
 @RequestMapping("mandje")
 class MandjeController {
@@ -35,8 +37,8 @@ class MandjeController {
     }
 
     @PostMapping("verwijderen")
-    public String verwijderen(Long[] ids) {
-        mandje.verwijder(ids);
+    public String verwijderen(Optional<Long[]> ids) {
+        ids.ifPresent(mandje::verwijder);
         return "redirect:/mandje";
     }
 }

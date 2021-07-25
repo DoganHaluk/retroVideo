@@ -26,8 +26,6 @@ public class Mandje implements Serializable {
             for (var id : filmIds) {
                 ids.remove(id);
             }
-        }else {
-            throw new NullPointerException();
         }
     }
 
