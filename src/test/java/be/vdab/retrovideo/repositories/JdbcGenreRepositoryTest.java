@@ -18,8 +18,18 @@ public class JdbcGenreRepositoryTest extends AbstractTransactionalJUnit4SpringCo
         this.repository = repository;
     }
 
+    private int genreId() {
+        return jdbcTemplate.queryForObject("select id from genres where naam='test1'", Integer.class);
+    }
+
     @Test
     void findAll() {
         assertThat(repository.findAll()).hasSize(countRowsInTable("genres"));
+    }
+
+    @Test
+    void findById() {
+        long id = genreId();
+        assertThat(repository.findById(id).get().getNaam()).isEqualTo("test1");
     }
 }

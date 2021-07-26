@@ -14,20 +14,21 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class JdbcKlantRepositoryTest extends AbstractTransactionalJUnit4SpringContextTests {
     private final JdbcKlantRepository repository;
 
-
     public JdbcKlantRepositoryTest(JdbcKlantRepository repository) {
         this.repository = repository;
     }
+
     private int idVanTestKlant() {
         return jdbcTemplate.queryForObject("select id from klanten where familienaam='test'", Integer.class);
     }
 
     @Test
-    void findByOnbestaandeFamilieNaamGeeftLeeg(){
+    void findByOnbestaandeFamilieNaamGeeftLeeg() {
         assertThat(repository.findByFamilienaamBevat("xx")).isEmpty();
     }
+
     @Test
-    void getNaamGeeftVoornaamEnFamilienaamSamen(){
+    void getNaamGeeftVoornaamEnFamilienaamSamen() {
         assertThat(repository.getNaam(idVanTestKlant())).isEqualTo("test test");
     }
 }
