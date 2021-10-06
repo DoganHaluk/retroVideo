@@ -131,7 +131,7 @@ p {
     margin: 10px;
     padding: 10px;
     box-shadow: 0 4px 10px 0, 0 4px 20px 0;
-    background: white;
+    color: white;
 }
 
 .flex {
