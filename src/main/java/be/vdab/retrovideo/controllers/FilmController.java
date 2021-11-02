@@ -15,11 +15,12 @@ class FilmController {
     FilmController(FilmService filmService) {
         this.filmService = filmService;
     }
+
     @GetMapping("{id}")
-    public ModelAndView film(@PathVariable long id){
+    public ModelAndView film(@PathVariable long id) {
         var modelAndView = new ModelAndView("film");
         filmService.findById(id)
-                .ifPresent(film->modelAndView.addObject(film));
+                .ifPresent(film -> modelAndView.addObject(film));
         return modelAndView;
     }
 }
