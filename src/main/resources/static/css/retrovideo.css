@@ -150,6 +150,7 @@ footer {
     display: flex;
     background-color: #d78c41;
     justify-content: space-between;
+    padding: 0.5em;
     font-size: x-small;
     position: fixed;
     left: 0;
