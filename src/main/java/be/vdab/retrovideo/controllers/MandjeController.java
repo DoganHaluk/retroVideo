@@ -1,7 +1,6 @@
 package be.vdab.retrovideo.controllers;
 
 import be.vdab.retrovideo.services.FilmService;
-import be.vdab.retrovideo.sessions.KlantGekozen;
 import be.vdab.retrovideo.sessions.Mandje;
 import org.springframework.stereotype.Controller;
 
