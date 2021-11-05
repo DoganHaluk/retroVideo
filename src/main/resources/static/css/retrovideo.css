@@ -112,7 +112,7 @@ label {
     margin: 10px;
 }
 
-label span, .fout {
+label span {
     background-color: red;
     border-bottom-right-radius: 0.5em;
     border-top-left-radius: 0.5em;
