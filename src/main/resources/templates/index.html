@@ -4,11 +4,13 @@
 <body>
 <nav th:replace="fragments::menu1"></nav>
 <h1>Genres</h1>
-<ul class="genres">
-    <li th:each="genre:${genres}" th:object="${genre}">
-        <a th:text="*{naam}" th:href="@{/genre/{id}(id=*{id})}"></a>
-    </li>
-</ul>
+<div class="container-fluid mt-3">
+    <ul class="genres">
+        <li th:each="genre:${genres}" th:object="${genre}">
+            <a th:text="*{naam}" th:href="@{/genre/{id}(id=*{id})}"></a>
+        </li>
+    </ul>
+</div>
 <div th:if="${id}">
     <h2>
         <th:block th:text="${genreUniek.get().getNaam()}"></th:block>

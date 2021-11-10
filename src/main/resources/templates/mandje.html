@@ -5,13 +5,13 @@
 <nav th:replace="fragments::menu2"></nav>
 <h1>Mandje</h1>
 <form method="post" th:action="@{/mandje/verwijderen}">
-    <table class="card">
+    <table class="table table-responsive">
         <thead>
         <tr>
-            <th>Film</th>
-            <th>Prijs</th>
-            <th>
-                <button>Verwijderen</button>
+            <th style="background-color: gray">Film</th>
+            <th style="background-color: gray">Prijs</th>
+            <th style="background-color: gray">
+                <button class="rounded">Verwijderen</button>
             </th>
         </tr>
         </thead>

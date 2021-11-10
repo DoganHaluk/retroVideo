@@ -22,7 +22,7 @@
         <dd th:text="*{beschikbaar}"></dd>
     </dl>
     <form th:if="*{isBeschikbaar()}" method="post" th:action="@{/mandje/{id}(id=*{id})}">
-        <button>In mandje</button>
+        <button class="rounded">In mandje</button>
     </form>
 </div>
 <footer th:replace="fragments::footer"></footer>

@@ -10,7 +10,7 @@
     <th:block th:text="${klantGekozen}"></th:block>
 </p>
 <form th:if="${aantalMandje}>0" method="post" th:action="@{/rapport}">
-    <button>Bevestigen</button>
+    <button class="rounded">Bevestigen</button>
 </form>
 <footer th:replace="fragments::footer"></footer>
 </body>

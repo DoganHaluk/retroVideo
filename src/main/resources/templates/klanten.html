@@ -8,15 +8,17 @@
     <label>Familienaam bevat:<span th:errors="*{familienaamBevat}"></span>
         <input th:field="*{familienaamBevat}" autofocus>
     </label>
-    <button>Zoeken</button>
+    <div>
+        <button class="rounded">Zoeken</button>
+    </div>
 </form>
-<table class="card" th:if="${klantenGevonden}">
+<table class="table table-responsive" th:if="${klantenGevonden}">
     <thead>
     <tr>
-        <th>Naam</th>
-        <th>Straat-Huisnummer</th>
-        <th>Postcode</th>
-        <th>Gemeente</th>
+        <th style="background-color: gray">Naam</th>
+        <th style="background-color: gray">Straat-Huisnummer</th>
+        <th style="background-color: gray">Postcode</th>
+        <th style="background-color: gray">Gemeente</th>
     </tr>
     </thead>
     <tbody>
