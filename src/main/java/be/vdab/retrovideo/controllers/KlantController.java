@@ -17,7 +17,7 @@ import javax.validation.Valid;
 class KlantController {
     private final KlantService klantService;
 
-    KlantController(KlantService klantService, KlantGekozen klantGekozen, Mandje mandje) {
+    KlantController(KlantService klantService) {
         this.klantService = klantService;
     }
 
