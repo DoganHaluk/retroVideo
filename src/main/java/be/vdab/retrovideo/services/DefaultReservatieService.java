@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 @Transactional
-public class DefaultReservatieService implements ReservatieService{
+public class DefaultReservatieService implements ReservatieService {
     private final ReservatieRepository reservatieRepository;
 
     public DefaultReservatieService(ReservatieRepository reservatieRepository) {

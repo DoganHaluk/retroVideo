@@ -39,12 +39,12 @@ public class DefaultFilmService implements FilmService {
 
     @Override
     @Transactional(readOnly = true)
-    public BigDecimal totaalPrijs(Set<Long> ids){
+    public BigDecimal totaalPrijs(Set<Long> ids) {
         return filmRepository.totaalPrijs(ids);
     }
 
     @Override
-    public void update(long id){
+    public void update(long id) {
         filmRepository.update(id);
     }
 }

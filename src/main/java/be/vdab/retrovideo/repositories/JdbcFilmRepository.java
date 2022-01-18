@@ -61,6 +61,6 @@ class JdbcFilmRepository implements FilmRepository {
 
     @Override
     public void update(long id) {
-        template.update("UPDATE films SET gereserveerd=gereserveerd+1 WHERE id="+id);
+        template.update("UPDATE films SET gereserveerd=gereserveerd+1 WHERE id=" + id);
     }
 }

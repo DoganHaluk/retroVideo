@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 @Transactional
-public class DefaultKlantService implements KlantService{
+public class DefaultKlantService implements KlantService {
     private final KlantRepository klantRepository;
 
     DefaultKlantService(KlantRepository klantRepository) {

@@ -2,8 +2,6 @@ package be.vdab.retrovideo.controllers;
 
 import be.vdab.retrovideo.forms.FamilienaamForm;
 import be.vdab.retrovideo.services.KlantService;
-import be.vdab.retrovideo.sessions.KlantGekozen;
-import be.vdab.retrovideo.sessions.Mandje;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
